@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registro de Pontos</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style/funcionario.css" media="screen" />
+    </head>
+    <body>
+        <div class="container">
+            <form onsubmit="return validateForm()">
+                <label for="idFuncionario">ID Funcionário:</label>
+                <input type="text" id="idFuncionario" name="idFuncionario" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <label class="checkbox-group" id="entradaLabel">Entrada
+                    <input type="checkbox" id="entrada" name="ponto" value="entrada" onclick="checkOnlyOne(this)">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label class="checkbox-group" id="saidaLabel">Saída
+                    <input type="checkbox" id="saida" name="ponto" value="saida" onclick="checkOnlyOne(this)">
+                    <span class="checkmark"></span>
+                </label>
+
+                <input type="submit" value="Registrar" onclick="return confirmado()">
+            </form>
+        </div>
+
+        <script>
+            function checkOnlyOne(clickedCheckbox) {
+                // Desmarca o outro checkbox quando um é marcado
+                var checkboxes = document.querySelectorAll('input[name="ponto"]');
+                checkboxes.forEach(function(checkbox) {
+                    if (checkbox !== clickedCheckbox) {
+                        checkbox.checked = false;
+                    }
+                });
+            }
+
+            function validateForm() {
+                // Verifica se pelo menos um dos checkboxes foi marcado
+                var entradaCheckbox = document.getElementById('entrada');
+                var saidaCheckbox = document.getElementById('saida');
+
+                if (!entradaCheckbox.checked && !saidaCheckbox.checked) {
+                    alert("Por favor, escolha pelo menos uma opção (Entrada ou Saída).");
+                    return false;
+                }
+
+                return true; // Submete o formulário se a validação passar
+            }
+
+            function confirmado(){
+                // Confirmação e redirecionamento
+                var confirmacao = confirm('Confirma o registro?');
+                if (confirmacao) {
+                    alert('Passagem registrada');
+                    window.location.href = 'PáginaInicial.html';
+                }
+                return false; // Evita que o formulário seja enviado
+            }
+        </script>
+    </body>
+</html>
