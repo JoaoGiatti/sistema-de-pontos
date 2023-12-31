@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(45deg, #10233b, #2f5b7e);
+    background: linear-gradient(45deg, #fff, #e7e7e7);
     margin: 0;
     display: flex;
     align-items: center;
@@ -18,16 +18,29 @@ body {
     padding: 10px 20px;
     background-color: #ffffff;
     color: #10233b;
-    border: 2px solid transparent;
+    border: 2px solid #10233b;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.1s ease-in-out, border-color 0.1s ease-in-out;
+    transition: transform 0.1s ease-in-out, background-color 0.2s ease-in-out;
     font-weight: 600;
 }
 
 .button:hover {
     border-color: #ffffff;
     color: #fff;
-    background-color: rgba(255,255,255, 0.4);
-    transform: translateY(-5px);
+    background-color: #ff4336;
+    border: 2px solid #ff4336;
+    transform: translateY(-4px);
+}
+.message{
+    position: absolute;
+    top: 150px;
+    display: flex;
+    align-self: center;
+}
+p{
+    text-align: center;
+    font-size: 25px;
+    color: #ff4336;
+    font-weight: 600;
 }

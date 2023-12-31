@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(45deg, #10233b, #2f5b7e);
+    background: linear-gradient(45deg, #fff, #e7e7e7);
     margin: 0;
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@ form {
 }
 
 label {
-    color: #ffffff;
+    color: #10233b;
     margin-bottom: 5px;
     font-weight: 600;
 }
@@ -28,13 +28,17 @@ label {
 input[type="text"],
 input[type="password"] {
     padding: 8px;
-    border: 1px solid #fff;
+    border: 2px solid #10233b;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    color: #ff4336;
+    font-weight: 600;
     margin-bottom: 10px;
 }
-
+input[type="text"]:hover,
+input[type="password"]:hover {
+    border-color: #ff4336;
+}
 .checkbox-group {
     display: block;
     position: relative;
@@ -60,14 +64,14 @@ input[type="password"] {
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: #eee;
+    background-color: #ddd;
     border-radius: 2px;
 }
 .checkbox-group:hover input ~ .checkmark{
     background-color: #ccc;
 }
 .checkbox-group input:checked ~ .checkmark {
-    background-color: #fa0a54;
+    background-color: #ff4336;
 }
 .checkbox-group .checkmark:after {
     content: "";
@@ -91,10 +95,11 @@ input[type="checkbox"] {
 }
 
 input[type="submit"] {
+    position: relative;
     padding: 10px 20px;
     background-color: #ffffff;
     color: #10233b;
-    border: 2px solid transparent;
+    border: 2px solid #10233b;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.1s ease-in-out, border-color 0.1s ease-in-out;
@@ -104,6 +109,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
     border-color: #ffffff;
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-3px);
+    background-color: #ff4336;
+    border: 2px solid #ff4336;
+    transform: translateY(-4px);
 }
