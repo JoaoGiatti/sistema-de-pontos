@@ -1,5 +1,8 @@
 body {
-    background: linear-gradient(45deg, #fff, #e7e7e7);
+    background-image: url("../img/Background.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
     margin: 0;
     display: flex;
     align-items: center;
